@@ -10,9 +10,9 @@ const App=()=>{
   return (
     <div className="ui container comments">
 
-    <CommentDetail />
-    <CommentDetail />
-    < CommentDetail />
+    <CommentDetail author="AbdulMalik"/>
+    <CommentDetail author="Sokhiba"/>
+    < CommentDetail author="Sumayya"/>
       
 
 
