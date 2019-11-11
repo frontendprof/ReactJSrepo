@@ -11,27 +11,34 @@ const App=()=>{
   return (
     <div className="ui container comments">
 
-    <ApprovalCard />
-
-    <CommentDetail 
-    author="AbdulMalik" 
-    timeAgo="Today at 9:15AM" 
-    blogText="Some random generated blog post" 
-    blogImage={faker.image.avatar()}
-    />
-    <CommentDetail 
-     author="Sokhiba"
-     timeAgo="Today at 6:15PM"
-     blogText="Blog post about leading healthy life style"
-     blogImage={faker.image.avatar()}
+    <ApprovalCard>
+      <CommentDetail 
+      author="AbdulMalik" 
+      timeAgo="Today at 9:15AM" 
+      blogText="Some random generated blog post" 
+      blogImage={faker.image.avatar()}
       />
-    < CommentDetail 
-    author="Sumayya"
-    timeAgo="Yesterday at 2:15AM"
-    blogText="Advanced aqida and arabic grammer classes"
-    blogImage={faker.image.avatar()}
-    />
-      
+    </ApprovalCard>
+
+
+    <ApprovalCard>
+      <CommentDetail 
+      author="Sokhiba"
+      timeAgo="Today at 6:15PM"
+      blogText="Blog post about leading healthy life style"
+      blogImage={faker.image.avatar()}
+      />
+    </ApprovalCard>
+
+
+    <ApprovalCard>
+      < CommentDetail 
+      author="Sumayya"
+      timeAgo="Yesterday at 2:15AM"
+      blogText="Advanced aqida and arabic grammer classes"
+      blogImage={faker.image.avatar()}
+      />
+    </ApprovalCard>  
 
 
       
