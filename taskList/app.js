@@ -97,9 +97,28 @@ function removeTask(e){
   if(e.target.parentElement.classList.contains('delete-item')){
     if(confirm("Are you sure about your decision?")){
       e.target.parentElement.parentElement.remove();
-    }
-  
+
+      // Removing from LS
+      removeFromLocalStorage(e.target.parentElement.parentElement);
+    }  
   }
+}
+
+
+// Remove from LS
+function removeFromLocalStorage(taskItem){
+  let tasks;
+  if(localStorage.getItem('tasks')===null){
+    tasks=[];
+  }else{
+    tasks=JSON.parse(localStorage.getItem('tasks'));
+  }
+  tasks.forEach(function(task,index){
+    if(taskItem.textContent===task){
+      tasks.splice(index,1);
+    }
+  });
+  localStorage.setItem('tasks',JSON.stringify(tasks));
 }
 
 
@@ -110,6 +129,13 @@ function clearTasks(){
       taskList.removeChild(taskList.firstChild);
     }
   }
+  // Clearing from Local storage
+  clearFromLocalStorage();
+}
+
+// Clear task
+function clearFromLocalStorage(){
+  localStorage.clear();
 }
 
 // Filter tasks
