@@ -3,7 +3,7 @@ const form=document.querySelector("#task-form");
 const taskInput=document.querySelector("#task");
 const filter=document.querySelector("#filter");
 const taskList=document.querySelector(".collection");
-const clearBtn=document.querySelector('.cleat-tasks');
+const clearBtn=document.querySelector('.clear-tasks');
 
 
 // Load all event listeners
@@ -11,8 +11,12 @@ loadAllEventListeners();
 
 // All event listener
 function loadAllEventListeners(){
-  // Add task
+  // Add task event
   form.addEventListener("submit", addTask);
+  // Remove ask event
+  taskList.addEventListener('click',removeTask);
+  // Clear tasks event
+  clearBtn.addEventListener('click',clearTasks);
 }
 
 // Add task
@@ -43,4 +47,20 @@ function addTask(e){
   taskInput.value="";
 
   e.preventDefault();
+}
+
+// Remove task
+function removeTask(e){
+
+  if(e.target.parentElement.classList.contains("delete-item")){
+    e.target.parentElement.parentElement.remove();
+  }
+
+}
+
+// Cleart tasks
+function clearTasks(){
+  while(taskList.firstChild){
+    taskList.removeChild(taskList.firstChild);
+  }
 }
