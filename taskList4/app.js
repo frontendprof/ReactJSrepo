@@ -130,8 +130,14 @@ function clearTasks(){
   while(taskList.firstChild){
     taskList.removeChild(taskList.firstChild);
   }
-}
 
+  // Clear Tasks
+  clearTasksFromLocalStorage();
+}
+// Clear tasks
+function clearTasksFromLocalStorage(){
+  localStorage.clear();
+}
 // Filter tasks
 function filterTasks(e){
   const text=e.target.value.toLowerCase();
