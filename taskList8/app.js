@@ -12,6 +12,8 @@ loadAllLoadListeners();
 
 // All event listeners
 function loadAllLoadListeners(){
+    // DOM Load Event 
+    document.addEventListener("DOMContentLoaded", getTasks);
     // Add task event listener
     form.addEventListener('submit',addTask);
     // Remove event listener
@@ -21,6 +23,42 @@ function loadAllLoadListeners(){
     // Filter task event listener
     filter.addEventListener('keyup',filterTask);
 }
+
+
+// Get tasks
+function getTasks(){
+    let tasks;
+    if(localStorage.getItem('tasks')===null){
+        tasks=[];
+    }else{
+        tasks=JSON.parse(localStorage.getItem('tasks'));
+    }
+    tasks.forEach(
+        function(task){
+
+            // Create li element
+            const li=document.createElement('li');
+            // Add class
+            li.className='collection-item';
+            // Create text node and append it to li
+            li.appendChild(document.createTextNode(task));
+            // Create link element
+            const link=document.createElement('a');
+            // Add class to it
+            link.className='delete-item secondary-content';
+            // Create html icon
+            link.innerHTML='<i class="fa fa-remove"> </i>';
+            // Append it to li
+            li.appendChild(link);
+            // Append li to ul
+            taskList.appendChild(li);
+            
+        }
+    );
+
+
+}
+
 
 // Add task
 function addTask(e) {
