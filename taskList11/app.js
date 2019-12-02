@@ -18,6 +18,9 @@ function loadAllEventListeners(){
     taskList.addEventListener('click',removeTask);
     // Clear tasks event listeners
     clearBtn.addEventListener('click',clearTasks);
+    // Filer tasks event listeners
+    filter.addEventListener('keyup',filterTasks);
+
 }
 
 
@@ -44,6 +47,10 @@ function addTask(e){
     // Append li to ul
     taskList.appendChild(li);
 
+    // Store to LS
+    storeToLocalStorage(taskInput.value);
+
+
 
     // Clear input value
     taskInput.value="";
@@ -51,6 +58,22 @@ function addTask(e){
 
 
     e.preventDefault();
+}
+
+// Store to LS
+function storeToLocalStorage(task){
+
+    let tasks;
+    if(localStorage.getItem('tasks')===null){
+        tasks=[];
+    }else{
+        tasks=JSON.parse(localStorage.getItem('tasks'));
+    }
+
+    tasks.push(task);
+
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
 }
 
 // Remove task
@@ -66,4 +89,20 @@ function clearTasks(){
     while(taskList.firstChild){
         taskList.removeChild(taskList.firstChild);
     }
+}
+
+// Filter tasks
+function filterTasks(e){
+    const text=e.target.value.toLowerCase();
+
+    document.querySelectorAll('.collection-item').forEach(function(task){
+        const item=task.firstChild.textContent;
+        if(item.toLowerCase().indexOf(text)!=-1){
+            task.style.display='block';
+        }else{
+            task.style.display="none";
+        }
+
+    });
+
 }
