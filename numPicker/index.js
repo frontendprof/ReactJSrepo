@@ -6,13 +6,19 @@ function getNumber(){
 class NumPicker extends React.Component{
     render(){
         const num=getNumber();
+        let msg;
+        if(num===7){
+            msg="You got it"
+        }else{
+            msg="Try again"
+        }
         return(
             <div>
-                <h3>My number is: {num}</h3>
-                <h1>{num===7? "You got it" : "Try again"}</h1>
+                <h3>Your number is: {num}</h3>
+                <h1>{msg}</h1>
                 {
                     num===7
-                    ? <img src="https://media.giphy.com/media/9xt5eMX6WhOhvfWajw/giphy.gif"/>
+                    ? <img src="https://media.giphy.com/media/nXxOjZrbnbRxS/giphy.gif"/>
                     : <img src="https://media.giphy.com/media/PlbDI5gaNCtISSIpz3/giphy.gif"/>
 
                 }
