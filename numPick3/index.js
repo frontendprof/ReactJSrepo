@@ -17,9 +17,9 @@ class NumPicker extends React.Component{
 
         }
         return(
-            <div>
+            <div className="NumColor">
                 <h2>Your number is:</h2>
-                <h1>{num}</h1>
+                <h1 className="NumColor-guess">{num}</h1>
                 {msg}
             </div>
 
