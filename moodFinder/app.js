@@ -7,7 +7,7 @@ function getMood(){
 class MoodFinder extends React.Component{
     render(){
         return(
-            <div>
+            <div className="Mood">
                 <h2>Your current mood is:</h2>
                 <h1>{getMood()}</h1>
                 <h2>And you look like like the image below</h2>
