@@ -5,3 +5,12 @@
     background: silver;
     color:navy;
 }
+
+.Mood-actual{
+    border:2px solid khaki;
+    color:coral;
+    display: inline-block;
+    padding:1rem 3rem;
+    border-radius: 0.5rem;
+
+}

@@ -9,8 +9,9 @@ class MoodFinder extends React.Component{
         return(
             <div className="Mood">
                 <h2>Your current mood is:</h2>
-                <h1>{getMood()}</h1>
-                <h2>And you look like like the image below</h2>
+                <h1 className="Mood-actual">{getMood()}</h1>
+                <h2>And you look like like the image on right ---></h2>
+                
             </div>
         );
     }
