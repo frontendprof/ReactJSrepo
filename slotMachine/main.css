@@ -1,0 +1,39 @@
+body{
+    background-color: #d9bdc5;
+}
+
+.slot-title{
+    color:#d82759;
+    border:1px solid teal;
+    display: block;
+    text-align: center;
+    background: #671acc;
+    float:center;
+}
+
+.Machine-base{
+    display: center;
+
+    
+}
+
+.Machine-contents{
+    border:2px solid blue;
+    width:150px;
+    height: 80px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.Machine-title{
+    /* float:right; */
+}
+
+
+display:flex;
+    align-text:center;
+    border:2px solid silver;
+    width:300px;
+    he
+    justify-content: space-evenly;
+    margin: 10px;
