@@ -12,8 +12,8 @@ class App extends React.Component{
             <div>
                 <h1>Asalaam aleykom</h1>
                 <h2>Welcome to Darus Salaam</h2>
-                <h1>ddd</h1>
-                <h2>dd</h2>
+                
+                <h2>We got different types of fruit for you to enjoy.</h2>
                 <Fruit 
                  f1="🍓️"
                  f2="🍇️"
