@@ -7,17 +7,23 @@ function getFruit(){
 
 class App extends React.Component{
     render(){
-        const fruit=getFruit();
+        
         return(
             <div>
                 <h1>Asalaam aleykom</h1>
                 <h2>Welcome to Darus Salaam</h2>
-                <h1>{fruit}{fruit}{fruit}{fruit}{fruit}{fruit}</h1>
-                <h2>{fruit}{fruit}{fruit}{fruit}{fruit}</h2>
-                <h3>{fruit}{fruit}{fruit}{fruit}</h3>
-                <h4>{fruit}{fruit}{fruit}</h4>
-                <h5>{fruit}{fruit}</h5>
-                <h6>{fruit}</h6>
+                <h1>ddd</h1>
+                <h2>dd</h2>
+                <Fruit 
+                 f1="🍓️"
+                 f2="🍇️"
+                 f3="🍌️"
+                 f4="🌺️"
+                 f5="🎃️"
+                 f6="🍅️"
+                 f7="🍒️"
+                 f8="🥝️"
+                 />
 
             </div>
         );
